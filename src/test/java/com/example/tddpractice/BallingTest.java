@@ -32,6 +32,14 @@ public class BallingTest {
     }
 
     @Test
+    @DisplayName("쓰러트린 핀의 개수만큼 점수를 얻는다.")
+    void getScoreAsManyAsKnockedDownPins() {
+        final Game game = new Game();
+        game.roll(1);
+        assertThat(game.score()).isEqualTo(1);
+    }
+
+    @Test
     @Disabled
     void example() {
         final Game game = new Game();
