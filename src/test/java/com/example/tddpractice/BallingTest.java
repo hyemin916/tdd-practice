@@ -78,8 +78,8 @@ public class BallingTest {
             throw new IllegalStateException("Game::roll not implemented yet");
         }
 
-        public boolean score() {
-            throw new IllegalStateException("Game::score not implemented yet");
+        public int score() {
+            return -1;
         }
     }
 }
