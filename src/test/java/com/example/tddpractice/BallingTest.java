@@ -24,6 +24,14 @@ public class BallingTest {
     }
 
     @Test
+    @DisplayName("한번의 투구에 0개 미만의 핀을 쓰러트릴 수 없다.")
+    void cannotKnockDownLessThanZeroPinsInOneRoll() {
+        final Game game = new Game();
+        assertThatThrownBy(() -> game.roll(-1))
+                .isExactlyInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
     @Disabled
     void example() {
         final Game game = new Game();
