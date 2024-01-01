@@ -1,12 +1,19 @@
 package com.example.tddpractice;
 
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class BallingTest {
+    @Test
+    @DisplayName("게임 스코어는 0에서 시작한다.")
+    void gameScoreStartsAtZero() {
+        final Game game = new Game();
+        assertThat(game.score()).isEqualTo(0);
+    }
 
     @Test
     @Disabled
