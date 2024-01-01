@@ -120,8 +120,15 @@ public class BallingTest {
 
     private class Game {
         private int score = 0;
+        private int frame = 1;
+        private int rollCountInCurrentFrame = 0;
 
         public void roll(final int i) {
+            rollCountInCurrentFrame++;
+            if (rollCountInCurrentFrame == 2) {
+                frame++;
+                rollCountInCurrentFrame = 1;
+            }
             if (i > 10 || i < 0) {
                 throw new IllegalArgumentException();
             }
@@ -133,6 +140,10 @@ public class BallingTest {
 
         public int score() {
             return score;
+        }
+
+        public int frame() {
+            return frame;
         }
     }
 }
