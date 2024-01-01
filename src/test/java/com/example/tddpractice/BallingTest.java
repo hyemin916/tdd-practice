@@ -16,6 +16,14 @@ public class BallingTest {
     }
 
     @Test
+    @DisplayName("한번의 투구에 10개 초과의 핀을 쓰러트릴 수 없다.")
+    void cannotKnockDownMoreThanTenPinsInOneRoll() {
+        final Game game = new Game();
+        assertThatThrownBy(() -> game.roll(11))
+                .isExactlyInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
     @Disabled
     void example() {
         final Game game = new Game();
@@ -75,7 +83,9 @@ public class BallingTest {
 
     private class Game {
         public void roll(final int i) {
-            throw new IllegalStateException("Game::roll not implemented yet");
+            if (i > 10) {
+                throw new IllegalArgumentException();
+            }
         }
 
         public int score() {
