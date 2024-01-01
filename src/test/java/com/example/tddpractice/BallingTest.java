@@ -79,7 +79,7 @@ public class BallingTest {
         }
 
         public int score() {
-            return -1;
+            return 0;
         }
     }
 }
