@@ -98,14 +98,17 @@ public class BallingTest {
     }
 
     private class Game {
+        private int score = 0;
+
         public void roll(final int i) {
             if (i > 10 || i < 0) {
                 throw new IllegalArgumentException();
             }
+            score++;
         }
 
         public int score() {
-            return 0;
+            return score;
         }
     }
 }
