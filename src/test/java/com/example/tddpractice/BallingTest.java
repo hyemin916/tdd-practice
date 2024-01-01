@@ -122,10 +122,11 @@ public class BallingTest {
         private int score = 0;
         private int frame = 1;
         private int rollCountInCurrentFrame = 0;
+        private int MAX_ROLL_COUNT_IN_ONE_FRAME = 2;
 
         public void roll(final int i) {
             rollCountInCurrentFrame++;
-            if (rollCountInCurrentFrame == 2) {
+            if (rollCountInCurrentFrame == MAX_ROLL_COUNT_IN_ONE_FRAME) {
                 frame++;
                 rollCountInCurrentFrame = 1;
             }
