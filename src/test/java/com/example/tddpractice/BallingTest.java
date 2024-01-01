@@ -49,6 +49,18 @@ public class BallingTest {
     }
 
     @Test
+    @DisplayName("두 번 투구하면 다음 프레임으로 넘어간다.")
+    void goNextFrameWhenRollTwice() {
+        final Game game = new Game();
+        assertThat(game.frame()).isEqualTo(1);
+
+        game.roll(5);
+        game.roll(4);
+
+        assertThat(game.frame()).isEqualTo(2);
+    }
+
+    @Test
     @Disabled
     void example() {
         final Game game = new Game();
