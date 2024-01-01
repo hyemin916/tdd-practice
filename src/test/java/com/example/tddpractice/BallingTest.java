@@ -123,6 +123,7 @@ public class BallingTest {
         private int frame = 1;
         private int rollCountInCurrentFrame = 0;
         private int MAX_ROLL_COUNT_IN_ONE_FRAME = 2;
+        private int FIN_COUNT_IN_ONE_FRAME = 10;
 
         public void roll(final int i) {
             rollCountInCurrentFrame++;
@@ -130,10 +131,10 @@ public class BallingTest {
                 frame++;
                 rollCountInCurrentFrame = 1;
             }
-            if (i > 10 || i < 0) {
+            if (i > FIN_COUNT_IN_ONE_FRAME || i < 0) {
                 throw new IllegalArgumentException();
             }
-            if (score + i > 10) {
+            if (score + i > FIN_COUNT_IN_ONE_FRAME) {
                 throw new IllegalArgumentException();
             }
             score += i;
