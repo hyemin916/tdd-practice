@@ -40,6 +40,15 @@ public class BallingTest {
     }
 
     @Test
+    @DisplayName("한 프레임(두번의 투구)에 10개 초과의 핀을 쓰러트릴 수 없다.")
+    void cannotKnockDownMoreThanTenPinsInOneFrame() {
+        final Game game = new Game();
+        game.roll(5);
+        assertThatThrownBy(() -> game.roll(6))
+                .isExactlyInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
     @Disabled
     void example() {
         final Game game = new Game();
