@@ -113,7 +113,10 @@ public class BallingTest {
             if (i > 10 || i < 0) {
                 throw new IllegalArgumentException();
             }
-            score++;
+            if (score + i > 10) {
+                throw new IllegalArgumentException();
+            }
+            score += i;
         }
 
         public int score() {
