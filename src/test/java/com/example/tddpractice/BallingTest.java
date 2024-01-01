@@ -131,12 +131,8 @@ public class BallingTest {
                 frame++;
                 rollCountInCurrentFrame = 1;
             }
-            if (i > FIN_COUNT_IN_ONE_FRAME || i < 0) {
-                throw new IllegalArgumentException();
-            }
-            if (score + i > FIN_COUNT_IN_ONE_FRAME) {
-                throw new IllegalArgumentException();
-            }
+            if (i > FIN_COUNT_IN_ONE_FRAME || i < 0) throw new IllegalArgumentException();
+            if (score + i > FIN_COUNT_IN_ONE_FRAME) throw new IllegalArgumentException();
             score += i;
         }
 
