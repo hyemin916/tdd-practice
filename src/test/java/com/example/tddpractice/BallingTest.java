@@ -91,7 +91,7 @@ public class BallingTest {
 
     private class Game {
         public void roll(final int i) {
-            if (i > 10) {
+            if (i > 10 || i < 0) {
                 throw new IllegalArgumentException();
             }
         }
